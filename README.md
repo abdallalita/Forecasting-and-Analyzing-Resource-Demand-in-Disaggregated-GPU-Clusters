@@ -44,25 +44,25 @@ This project analyzes GPU/CPU cluster traces to understand scheduling delays, ru
 
 ### Forecasting Resource Demand
 **Goal: Predict future CPU, GPU, memory, RDMA, and disk demand for short-term planning.**
-1. Approach
+**1. Approach**
 - Aggregate resource requests over time (resampled every 5 minutes).
 - Normalize features using MinMaxScaler.
 - Generate sequences of past resource usage for multivariate LSTM input.
 - Train LSTM to predict next 5-minute resource demand for all features.
 
-2. Observations
+**2. Observations**
 - CPU, memory, and disk predictions moderately accurate (NRMSE ~2).
 - GPU and RDMA predictions poor due to bursty, spiky behavior (NRMSE ~5–6).
 
 **Model overfits: low training loss vs higher validation loss**
 
-3. Next steps for improvement
+**3. Next steps for improvement**
 - Add regularization (dropout, L2 penalties).
 - Tune sequence length and hidden units.
 - Explore advanced architectures (stacked LSTM, GRU, Transformers).
 - Apply walk-forward validation and ensembling.
 
-4. Future Work: Optimization & Placement Modeling
+**4. Future Work: Optimization & Placement Modeling**
 **Objective: Efficiently allocate forecasted resource demand across cluster nodes while respecting system constraints.**
 - Constraints:
  - RDMA requirement: Some jobs need nodes with high-speed GPU-to-GPU networking.
