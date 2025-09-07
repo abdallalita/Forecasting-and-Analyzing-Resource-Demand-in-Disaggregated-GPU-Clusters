@@ -30,9 +30,9 @@ This project analyzes GPU/CPU cluster traces to understand scheduling delays, ru
 - Head Nodes experience higher scheduling delays; Compute Nodes have longer runtimes.
 - Top applications vary: some apps have significantly longer delays or runtimes, highlighting resource-intensive workloads.
 
-**2. Resource Efficiency**
+**2. Resource Allocation Efficiency**
 - CPU, GPU, memory, and RDMA requests closely match limits hence efficient allocation, no major waste.
-- Disk efficiency ~85%, indicating some unallocated capacity.
+- Disk efficiency ~85%, indicating some capacity left unallocated.
 - Only Head Nodes request GPUs while Compute Nodes show slight over-provisioning on disk.
    
 **3. Placement Rules Impact**
