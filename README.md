@@ -36,7 +36,7 @@ This project analyzes GPU/CPU cluster traces to understand scheduling delays, ru
 - Only Head Nodes request GPUs while Compute Nodes show slight over-provisioning on disk.
    
 **3. Placement Rules Impact**
-- Strict limits sucg as 2–4 instances per node, increase scheduling delay over 5 min.
+- Strict limits such as 2–4 instances per node, increase scheduling delay over 5 min.
 - Looser limits reduce delay (seconds).
 - Runtime largely unaffected, rules mainly influence start time, not execution length
 
@@ -59,7 +59,7 @@ This project analyzes GPU/CPU cluster traces to understand scheduling delays, ru
 **3. Next steps for improvement**
 - Add regularization (dropout, L2 penalties).
 - Tune sequence length and hidden units.
-- Explore advanced architectures (stacked LSTM, GRU, Transformers).
+- Explore advanced architectures (stacked LSTM, GRU(Gated Reccurent Unit), Transformers).
 - Apply walk-forward validation and ensembling.
 
 **4. Future Work: Optimization & Placement Modeling**
