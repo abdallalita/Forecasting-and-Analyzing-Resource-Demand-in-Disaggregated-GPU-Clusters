@@ -40,10 +40,11 @@ This project analyzes GPU/CPU cluster traces to understand scheduling delays, ru
 - Looser limits reduce delay (seconds).
 - Runtime largely unaffected, rules mainly influence start time, not execution length
 
+--
 ### Key Tradeoff Observed : Placement Strictness vs Scheduling delay
-**Nodes with stricter placement rules experienced higher scheduling delay while those with looser limits reduced delays as job instances start faster, but risks node overloading and resource contention. Therefore the need for a balnce between between enforcing placement constraints and minimizing the time job instances wait to start.**
+*Nodes with stricter placement rules experienced higher scheduling delay while those with looser limits reduced delays as job instances start faster, but risks node overloading and resource contention. This illustrates the need for a balnce between between enforcing placement constraints and minimizing the time job instances wait to start.*
 
-High-Level Observation: Since all workloads are latency-sensitive, RDMA requests and max_instance_per_node reveal constraints affecting placement and queueing.**
+High-Level Observation: Since all workloads are latency-sensitive, RDMA requests and max_instance_per_node reveal constraints affecting placement and queueing.
 
 ### Forecasting Resource Demand
 **Goal: Predict future CPU, GPU, memory, RDMA, and disk demand for short-term planning.**
