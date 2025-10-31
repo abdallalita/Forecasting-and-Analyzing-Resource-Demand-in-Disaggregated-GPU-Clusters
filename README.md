@@ -42,7 +42,7 @@ This project analyzes GPU/CPU cluster traces to understand scheduling delays, ru
 
 ---
 ### Key Tradeoff Observed : Placement Strictness vs Scheduling delay
-*Nodes with stricter placement rules experienced higher scheduling delay while those with looser limits reduced delays as job instances start faster, but risks node overloading and resource contention. This illustrates the need for a balnce between between enforcing placement constraints and minimizing the time job instances wait to start.*
+*Nodes with stricter placement rules experienced longer scheduling delay while those with looser limits reduced delays as job instances start faster, but risks node overloading and resource contention. This illustrates the need for a balnce between between enforcing placement constraints and minimizing the time job instances wait to start.*
 
 ---
 
