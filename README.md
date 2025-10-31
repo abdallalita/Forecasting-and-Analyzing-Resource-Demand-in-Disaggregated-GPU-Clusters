@@ -41,11 +41,12 @@ This project analyzes GPU/CPU cluster traces to understand scheduling delays, ru
 - Runtime largely unaffected, rules mainly influence start time, not execution length
 
 ---
-### Key Tradeoffs Observed : Placement Strictness vs Scheduling delay
-- *Nodes with stricter placement rules experienced longer scheduling delay while those with looser limits reduced delays as job instances start faster, but risks node overloading and resource contention. This illustrates the need for a balnce between between enforcing placement constraints and minimizing the time job instances wait to start.*
+### Key Tradeoffs Assessed :
+- **Placement Strictness vs Scheduling delay**
+*Nodes with stricter placement rules experienced longer scheduling delay while those with looser limits reduced delays as job instances start faster, but risks node overloading and resource contention. This illustrates the need for a balnce between between enforcing placement constraints and minimizing the time job instances wait to start.*
 - **Efficiency vs Reliability**
-High request to limit ratios indicate that resources were fully utilized with minimal wastage, but when nodes run near capacity, new job instances compete for scarce resources leading to longer scheduling delays and higher latency, during demand spikes, some jobs timeout whereas others fail allocations, reflected in higher error/fatal rates in the previous distributed project.
-Anomaly detection on latency and error rates flagged unusual spikes early, suggesting that leaving some unused capacity/resources as a safety margin could improve stability of the system under sudden load.
+*High request to limit ratios indicate that resources were fully utilized with minimal wastage, but when nodes run near capacity, new job instances compete for scarce resources leading to longer scheduling delays and higher latency; during demand spikes, some jobs timeout whereas others fail allocations, reflected in higher error/fatal rates in the previous distributed project.
+Anomaly detection on latency and error rates flagged unusual spikes early, suggesting that leaving some unused capacity/resources as a safety margin could improve stability of the system under sudden load.*
 
 NOTE ~ pushing efficiency too far reduces reliability of the system while keeping some unused capacity improves reliability but reduces efficiency.
 
